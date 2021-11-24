@@ -106,8 +106,8 @@ function Bookingscreen({match}) {
             amount={totalAmount*100}
             shippingAddress
             token={tokenHander}
-            stripeKey='pk_test_51IYnC0SIR2AbPxU0TMStZwFUoaDZle9yXVygpVIzg36LdpO8aSG8B9j2C0AikiQw2YyCI8n4faFYQI5uG3Nk5EGQ00lCfjXYvZ'
-            currency='INR'
+            stripeKey='pk_test_51JzPLAC5s4FHwtTAfooOlab0SSxrFOfzN47nq4PKBn1ORLst1ussV90ON4SOyerR8gL0MArodn2K4DfL4ntubhc400pYA2ZVhy'
+            currency='USD'
             >
 
                   

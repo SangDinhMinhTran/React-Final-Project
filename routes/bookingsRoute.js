@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const { v4: uuidv4 } = require("uuid");
 const moment = require("moment");
 const stripe = require("stripe")(
-  "sk_test_51IYnC0SIR2AbPxU0EiMx1fTwzbZXLbkaOcbc2cXx49528d9TGkQVjUINJfUDAnQMVaBFfBDP5xtcHCkZG1n1V3E800U7qXFmGf"
+  "sk_test_51JzPLAC5s4FHwtTAdkUHwlSs8ymTCMcwlvaSsSXJoDhdOP9kceaP2VpN5CR6YdUDOCDznm3nLglMOil7F7hQReQL00W5r2FyeT"
 );
 const Booking = require("../models/booking");
 const Room = require("../models/room");
