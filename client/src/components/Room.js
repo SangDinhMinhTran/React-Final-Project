@@ -17,7 +17,7 @@ function Room({ room, fromdate, todate }) {
         <h1>{room.name}</h1>
         <p>{room.amenities}</p>
         <p>
-          <b>Max Count : {room.maxcount}</b>
+          <b>Number of Rooms : {room.maxcount}</b>
         </p>
         <p>
           <b>Phonenumber : </b>
@@ -25,6 +25,12 @@ function Room({ room, fromdate, todate }) {
         </p>
         <p>
           <b>Type : {room.type}</b>
+        </p>
+        <p>
+          <b>Amentities : {room.amentities} </b>
+        </p>
+        <p>
+          <b>Surcharge : {room.surcharge}%</b>
         </p>
 
         <div style={{ float: "right" }}>

@@ -37,6 +37,7 @@ function Rooms() {
                                <th>Max Count</th>
                                <th>Phone Number</th>
                                <th>Amenities</th>
+                               <th>Surcharge</th>
                            </tr>
                        </thead>
                        <tbody>
@@ -49,6 +50,7 @@ function Rooms() {
                                    <td>{room.maxcount}</td>
                                    <td>{room.phonenumber}</td>
                                    <td>{room.amenities}</td>
+                                   <td>{room.surcharge}</td>
                                </tr>
                            })}
                        </tbody>

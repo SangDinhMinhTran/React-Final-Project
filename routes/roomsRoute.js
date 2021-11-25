@@ -41,7 +41,7 @@ router.post("/addroom", async(req, res) => {
      const newroom = new Room({
           name : room,
           rentperday, 
-          maxcount , description , phonenumber , type , imageurls:[image1 , image2 ,image3] , currentbookings:[]
+          maxcount , description , phonenumber , type , imageurls:[image1 , image2 ,image3] , currentbookings:[], amenities: [], surcharge,
      })
      try {
           await newroom.save()

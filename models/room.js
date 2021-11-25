@@ -16,6 +16,7 @@ const roomSchema = mongoose.Schema({
     rentperday:{type:Number, required:true},
     type:{type:String, required:true},
     amenities: [],
+    surcharge: Number,
 })
 
 const roomModel = mongoose.model('rooms' , roomSchema)

@@ -92,7 +92,9 @@ function Bookingscreen({match}) {
                            <p><b>Name</b> : {JSON.parse(localStorage.getItem('currentUser')).name}</p>
                            <p><b>From Date</b> : {match.params.fromdate}</p>
                            <p><b>To Date</b> : {match.params.todate}</p>
-                           <p><b>Max Count </b>: {room.maxcount}</p>
+                           <p><b>Number of Rooms </b>: {room.maxcount}</p>
+                           <p><b>Amentities </b>: {room.amenities} </p>
+                           <p><b>Surcharge </b>: {room.surcharge}%</p>
                            </div>
                            
                            <div className='mt-5'>

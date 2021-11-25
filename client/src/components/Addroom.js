@@ -8,6 +8,8 @@ function Addroom() {
   const [description, setdescription] = useState("");
   const [phonenumber, setphonenumber] = useState("");
   const [type, settype] = useState("");
+  const [amenities, setamenities] = useState("");
+  const [surcharge, setsurcharge] = useState("");
   const [image1, setimage1] = useState("");
   const [image2, setimage2] = useState("");
   const [image3, setimage3] = useState("");
@@ -15,7 +17,7 @@ function Addroom() {
   {
       const roomobj = {
           room , 
-          rentperday, maxcount ,description ,phonenumber ,type ,image1 ,image2 ,image3
+          rentperday, maxcount ,description ,phonenumber, amenities: [], surcharge,type ,image1 ,image2 ,image3
       }
       try {
           const result = await axios.post('/api/rooms/addroom' , roomobj)
@@ -87,6 +89,24 @@ function Addroom() {
             value={type}
             onChange={(e) => {
               settype(e.target.value);
+            }}
+          />
+          <input
+            type="text"
+            className="form-control mt-1"
+            placeholder="amenities"
+            value={amenities}
+            onChange={(e) => {
+              setamenities(e.target.value);
+            }}
+          />
+          <input
+            type="text"
+            className="form-control mt-1"
+            placeholder="surcharge"
+            value={surcharge}
+            onChange={(e) => {
+              setsurcharge(e.target.value);
             }}
           />
         <input
