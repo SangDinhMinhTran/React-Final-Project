@@ -21,6 +21,21 @@ function Bookingscreen({match}) {
     const todate=moment(match.params.todate,'DD-MM-YYYY')
     const totalDays = moment.duration(todate.diff(fromdate)).asDays()+1
     const [totalAmount , settotalAmount]=useState()
+    const amountCharge = 0;
+    function amountSurchagre(fromdate, todate, amountCharge){
+        var d1 = new Date(fromdate);
+        var d2 = new Date(todate);
+        var isWeekend = false;
+        while (d1 < d2){
+            var day = d1.getDay();
+            isWeekend = (day === 6) || (day === 0);
+            if (isWeekend) amountCharge++;
+            d1.setDate(d1.getDate()+1);
+        }
+    }
+    amountSurchagre(fromdate, todate, amountCharge);
+    
+
     useEffect(async() => {
         
         try {
@@ -29,13 +44,14 @@ function Bookingscreen({match}) {
             console.log(data);
             setroom(data);
             setloading(false);
-            settotalAmount(data.rentperday * totalDays)
+            settotalAmount( (amountCharge === 0)? data.rentperday * totalDays : data.rentperday * totalDays*amountCharge/100)
           } catch (error) {
             console.log(error);
             setloading(false);
           }
           
     }, [])
+
 
 
     async function tokenHander(token) {
@@ -93,7 +109,6 @@ function Bookingscreen({match}) {
                            <p><b>From Date</b> : {match.params.fromdate}</p>
                            <p><b>To Date</b> : {match.params.todate}</p>
                            <p><b>Number of Rooms </b>: {room.maxcount}</p>
-                           <p><b>Amentities </b>: {room.amenities} </p>
                            <p><b>Surcharge </b>: {room.surcharge}%</p>
                            </div>
                            

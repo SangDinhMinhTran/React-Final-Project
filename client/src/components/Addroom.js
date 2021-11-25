@@ -17,7 +17,7 @@ function Addroom() {
   {
       const roomobj = {
           room , 
-          rentperday, maxcount ,description ,phonenumber, amenities: [], surcharge,type ,image1 ,image2 ,image3
+          rentperday, maxcount ,description ,phonenumber, amenities, surcharge,type ,image1 ,image2 ,image3
       }
       try {
           const result = await axios.post('/api/rooms/addroom' , roomobj)

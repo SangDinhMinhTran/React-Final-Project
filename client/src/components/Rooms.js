@@ -34,9 +34,8 @@ function Rooms() {
                                <th>Name</th>
                                <th>Type</th>
                                <th>Rent Per day</th>
-                               <th>Max Count</th>
+                               <th>Number of Rooms</th>
                                <th>Phone Number</th>
-                               <th>Amenities</th>
                                <th>Surcharge</th>
                            </tr>
                        </thead>
@@ -48,8 +47,7 @@ function Rooms() {
                                    <td>{room.type}</td>
                                    <td>{room.rentperday}</td>
                                    <td>{room.maxcount}</td>
-                                   <td>{room.phonenumber}</td>
-                                   <td>{room.amenities}</td>
+                                   <td>{room.phonenumber}</td>                           
                                    <td>{room.surcharge}</td>
                                </tr>
                            })}
