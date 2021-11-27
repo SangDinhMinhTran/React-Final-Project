@@ -23,18 +23,20 @@ function Bookingscreen({match}) {
     const [totalAmount , settotalAmount]=useState()
     let amountCharge = 0;
   
-    function amountSurcharge(amountCharge){
-        var d1 = fromdate.toDate();
-        var d2 = todate.toDate();
+    function amountSurcharge(){
+        var d1 = new Date(fromdate);
+        var d2 = new Date(todate);
         var isWeekend = false;
+        var amountCharge=0;
         while (d1 < d2){
             var day = d1.getDay();
             isWeekend = (day === 6) || (day === 0);
             if (isWeekend) amountCharge++;
             d1.setDate(d1.getDate()+1);
         }
+        return amountCharge;
     }
-    amountSurcharge(amountCharge);
+    amountCharge = amountSurcharge(amountCharge);
     console.log(amountCharge);
     useEffect(async() => {
         
