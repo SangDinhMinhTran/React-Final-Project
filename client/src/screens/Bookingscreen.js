@@ -21,10 +21,11 @@ function Bookingscreen({match}) {
     const todate=moment(match.params.todate,'DD-MM-YYYY')
     const totalDays = moment.duration(todate.diff(fromdate)).asDays()+1
     const [totalAmount , settotalAmount]=useState()
-    var amountCharge = 0;
-    function amountSurchagre(amountCharge){
-        var d1 = new Date(fromdate);
-        var d2 = new Date(todate);
+    let amountCharge = 0;
+  
+    function amountSurcharge(amountCharge){
+        var d1 = fromdate.toDate();
+        var d2 = todate.toDate();
         var isWeekend = false;
         while (d1 < d2){
             var day = d1.getDay();
@@ -33,7 +34,7 @@ function Bookingscreen({match}) {
             d1.setDate(d1.getDate()+1);
         }
     }
-    amountSurchagre(amountCharge);
+    amountSurcharge(amountCharge);
     console.log(amountCharge);
     useEffect(async() => {
         
@@ -116,7 +117,7 @@ function Bookingscreen({match}) {
                            <hr />
                            <p>Total Days : <b>{totalDays}</b></p>
                            <p>Rent Per Day : <b>{room.rentperday}</b></p>
-                           <h1><b>Total Amount : {totalAmount} /-</b></h1>
+                           <h1><b>Total Amount : {totalAmount}</b></h1>
 
                            <StripeCheckout
             amount={totalAmount*100}

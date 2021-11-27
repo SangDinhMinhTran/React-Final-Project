@@ -21,6 +21,7 @@ function Homescreen() {
   const [loading, setloading] = useState(false);
   const [searchkey, setsearchkey] = useState('')
   const[type , settype]=useState('all')
+  const[amenities , setamenities]=useState('all')
   function filterByDate(dates) {
     setfromdate(moment(dates[0]).format('DD-MM-YYYY'))
     settodate(moment(dates[1]).format('DD-MM-YYYY'))
@@ -92,6 +93,19 @@ function Homescreen() {
    
   }
 
+  function filterByAmenities(e)
+  {
+    setamenities(e)
+    if(e!=='all'){
+      const dupdate = duplicatehotes.filter(room=>room.amenities.filter( amenity => amenity.includes(e.toLowerCase())))
+      sethotels(dupdate)
+    }
+    else{
+      sethotels(duplicatehotes)
+    }
+   
+  }
+
   return (
     <div className="mt-5">
       <div className="container">
@@ -120,6 +134,17 @@ function Homescreen() {
               
             </select>
           </div>
+          <div className="col-md-4">
+            <select className="form-control m-2" value={amenities} onChange={(e)=>{filterByAmenities(e.target.value)}} >
+
+            <option value="all">All</option>
+              <option value="pool">Pool</option>
+              <option value="gym">Gym</option>
+              <option value="spa">Spa</option>
+              <option value="business office">Business Office</option>
+            </select>
+          </div>
+          
         </div>
       </div>
 
