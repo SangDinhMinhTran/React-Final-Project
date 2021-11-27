@@ -146,7 +146,7 @@ export function Rooms() {
                                    <td>{room.rentperday}</td>
                                    <td>{room.maxcount}</td>
                                    <td>{room.phonenumber}</td>
-                                   <td>{room.amenities} </td>
+                                   <td>{room.amenities.join(" ")} </td>
                                    <td>{room.surcharge}</td>
                                </tr>
                            })}
@@ -229,7 +229,7 @@ export function Addroom() {
   {
       const roomobj = {
           room , 
-          rentperday, maxcount ,description ,phonenumber ,type , amentities: [], surcharge ,image1 ,image2 ,image3
+          rentperday, maxcount ,description ,phonenumber ,type , amentities:[], surcharge ,image1 ,image2 ,image3
       }
       try {
           const result = await axios.post('/api/rooms/addroom' , roomobj)

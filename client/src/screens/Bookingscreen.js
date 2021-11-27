@@ -46,7 +46,7 @@ function Bookingscreen({match}) {
             console.log(data);
             setroom(data);
             setloading(false);
-            settotalAmount( (amountCharge === 0)? data.rentperday * totalDays : data.rentperday * totalDays*data.surcharge*amountCharge/100)
+            settotalAmount( (amountCharge === 0)? data.rentperday * totalDays : data.rentperday*totalDays+ data.rentperday*data.surcharge*amountCharge/100)
           } catch (error) {
             console.log(error);
             setloading(false);
