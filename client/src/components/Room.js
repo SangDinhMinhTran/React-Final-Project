@@ -43,10 +43,6 @@ function Room({ room, fromdate, todate }) {
             <button className="btn btn-dark m-2 disabled">Select Dates</button>
           }
 
-          {!(fromdate && todate) &&
-            <button className="btn btn-dark m-2 disabled">Select Dates</button>
-          }
-
           <button className="btn btn-danger m-2"  onClick={handleShow}>
             View Details
           </button>
