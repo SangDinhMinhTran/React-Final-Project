@@ -91,3 +91,9 @@ p{
   color:black !important;
   margin-top: 10px !important;
 }
+
+#container {
+  background-image: url('https://www.fairmont.com/assets/0/104/105/334/336/337/30e63ac3-e07a-4131-b1ee-1954b451fb5a.jpg');
+  min-height: 100%;
+  min-width: 100%;
+}

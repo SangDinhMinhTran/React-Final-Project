@@ -13,6 +13,8 @@ function Navbar() {
         <a class="navbar-brand" href="/">
          Hotel Frenzy
         </a>
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/home">Book</a>
         <button
           class="navbar-toggler"
           type="button"

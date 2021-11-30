@@ -68,7 +68,7 @@ export default function Registerscreen() {
               onChange={(e)=>{setpassword(e.target.value)}}
             />
             <input
-              type="text"
+              type="password"
               placeholder="confirm password"
               className="form-control mt-1"
               value={cpassword}
