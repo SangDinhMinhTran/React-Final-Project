@@ -13,6 +13,10 @@ function Navbar() {
         <a class="navbar-brand" href="/">
          Hotel Frenzy
         </a>
+
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/home">Book</a>
+
         <button
           class="navbar-toggler"
           type="button"
@@ -26,7 +30,7 @@ function Navbar() {
         </button>
         <div class="collapse navbar-collapse " id="navbarNav">
 
-         
+
 
 
           <ul class="navbar-nav ml-auto">
@@ -34,10 +38,13 @@ function Navbar() {
           {localStorage.getItem('currentUser') ? (
             <div class="dropdown mr-5">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fa fa-user" aria-hidden="true"></i>  {JSON.parse(localStorage.getItem('currentUser')).name} 
+            <i class="fa fa-user" aria-hidden="true"></i>  {JSON.parse(localStorage.getItem('currentUser')).name}
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <a class="dropdown-item" href="/profile">Profile</a>
+              {JSON.parse(localStorage.getItem('currentUser')).isAdmin == true &&
+                <a class="dropdown-item" href="/admin">Admin</a>
+              }
               <a class="dropdown-item" href="#" onClick={logout}>Logout</a>
             </div>
           </div>
@@ -56,7 +63,7 @@ function Navbar() {
             </li>
             </>
             )}
-           
+
           </ul>
         </div>
       </nav>

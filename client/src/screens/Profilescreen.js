@@ -14,7 +14,7 @@ function Profilescreen() {
     <div className="mt-5 ml-3">
       <Tabs defaultActiveKey="1">
         <TabPane tab="My Profile" key="1">
-         <div className="row">
+         <div className="row p-3">
            <div className="col-md-6 bs m-2 p-3">
            <h1>Name : {user.name}</h1>
           <h1>Email : {user.email}</h1>
@@ -31,7 +31,7 @@ function Profilescreen() {
           </h1>
         </TabPane>
       </Tabs>
-  
+
     </div>
   );
 }
@@ -61,7 +61,7 @@ export const MyOrders = () => {
 
   async function cancelBooking(bookingid , roomid){
 
-    
+
     try {
       setloading(true);
       const result = await axios.post('/api/bookings/cancelbooking' , {bookingid:bookingid , userid:user._id , roomid:roomid});
@@ -86,8 +86,8 @@ export const MyOrders = () => {
         <Error />
       ) : (
         mybookings.map(booking=>{
-          return <div className="row">
-          <div className="col-md-6 my-auto">
+          return <div className="row p-3">
+          <div className="col-md-6">
             <div className='bs m-1 p-2'>
               <h1>{booking.room}</h1>
               <p>BookingId : {booking._id}</p>
