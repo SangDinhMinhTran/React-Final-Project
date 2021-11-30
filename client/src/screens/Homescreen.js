@@ -25,13 +25,13 @@ function Homescreen() {
   function filterByDate(dates) {
     setfromdate(moment(dates[0]).format('DD-MM-YYYY'))
     settodate(moment(dates[1]).format('DD-MM-YYYY'))
-    
+
     var temp=[]
     for (var room of duplicatehotes) {
       var availability = false;
-      
+
       for (var booking of room.currentbookings) {
-        
+
         if(room.currentbookings.length)
         {
           if (
@@ -48,16 +48,16 @@ function Homescreen() {
             }
           }
         }
-        
-        
+
+
       }
-      if(availability || room.currentbookings.length==0) 
+      if(availability || room.currentbookings.length==0)
       {
         temp.push(room)
       }
       sethotels(temp)
     }
-    
+
   }
 
   useEffect(async () => {
@@ -90,7 +90,7 @@ function Homescreen() {
     else{
       sethotels(duplicatehotes)
     }
-   
+
   }
 
   function filterByAmenities(e)
@@ -103,13 +103,27 @@ function Homescreen() {
     else{
       sethotels(duplicatehotes)
     }
-   
+
   }
 
   return (
     <div className="mt-5">
       <div className="container">
-        <div className="row bs p-3 m-5">
+        <div className="row">
+          <div className="col-md-4">
+            Check-in and Check-out
+          </div>
+          <div className="col-md-4">
+            Search
+          </div>
+          <div className="col-md-2">
+            Room Type
+          </div>
+          <div className="col-md-2">
+            Amenities
+          </div>
+        </div>
+        <div className="row justify-content-center">
           <div className="col-md-4">
             <RangePicker style={{ height: "38px" }} onChange={filterByDate} format='DD-MM-YYYY' className='m-2'/>
           </div>
@@ -124,17 +138,17 @@ function Homescreen() {
               onChange={(e)=>{setsearchkey(e.target.value)}}
             />
           </div>
-          <div className="col-md-4">
+          <div className="col-md-2">
             <select className="form-control m-2" value={type} onChange={(e)=>{filterByType(e.target.value)}} >
 
             <option value="all">All</option>
-              <option value="standard">Standar</option>
+              <option value="standard">Standard</option>
               <option value="Queen">Queen</option>
               <option value="King">King</option>
-              
+
             </select>
           </div>
-          <div className="col-md-4">
+          <div className="col-md-2">
             <select className="form-control m-2" value={amenities} onChange={(e)=>{filterByAmenities(e.target.value)}} >
 
             <option value="all">All</option>
@@ -144,7 +158,7 @@ function Homescreen() {
               <option value="business office">Business Office</option>
             </select>
           </div>
-          
+
         </div>
       </div>
 
