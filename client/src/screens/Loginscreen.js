@@ -4,7 +4,8 @@ import axios from "axios";
 import Error from "../components/Error";
 import Loader from "../components/Loader";
 import Success from "../components/Success";
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
+import { toast } from "react-toastify";
 export default function Loginscreen() {
   
 
@@ -34,10 +35,12 @@ export default function Loginscreen() {
         const result = await (await axios.post('/api/users/login',user)).data
         localStorage.setItem('currentUser',JSON.stringify(result))
         window.location.href='/'
+        toast.success("Login successfully")
       } catch (error) {
         seterror(true)
         setloading(false)
         console.log(error);
+        toast.error("Invalid credentials! Please check again");
         
       }
     }
@@ -45,7 +48,7 @@ export default function Loginscreen() {
     return (
         <div className='login'>
          <div className="row justify-content-center mt-5">
-        <div className="col-md-5 mt-5 text-left shadow-lg p-3 mb-5 bg-white rounded">
+        <div className="col-md-5 mt-5 text-left shadow-lg p-3 mb-5 bg-white rounded" data-aos='zoom-out'>
           <h2 className="text-center m-2" style={{ fontSize: "35px" }}>
             Login
           </h2>
