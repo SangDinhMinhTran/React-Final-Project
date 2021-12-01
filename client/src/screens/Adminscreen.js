@@ -82,6 +82,7 @@ export function Bookings() {
                                <th>From</th>
                                <th>To</th>
                                <th>Status</th>
+                               <th></th>
                            </tr>
                        </thead>
                        <tbody>
@@ -93,6 +94,10 @@ export function Bookings() {
                                    <td>{booking.fromdate}</td>
                                    <td>{booking.todate}</td>
                                    <td>{booking.status}</td>
+                                   <td>
+                                     <button className="btn btn-primary rounded-pill mt-3 mb-3 "> Update</button>
+                                     <button className="btn btn-primary rounded-pill mt-3 mb-3 "> Delete</button>
+                                     </td>
                                </tr>
                            })}
                        </tbody>
@@ -138,6 +143,7 @@ export function Rooms() {
                                <th>Phone Number</th>
                                <th>Amenities </th>
                                <th>Surcharge</th>
+                               <th></th>
                            </tr>
                        </thead>
                        <tbody>
@@ -151,6 +157,10 @@ export function Rooms() {
                                    <td>{room.phonenumber}</td>
                                    <td>{room.amenities.join(" ")} </td>
                                    <td>{room.surcharge}</td>
+                                   <td>
+                                     <button className="btn btn-primary rounded-pill mt-3 mb-3">Update</button>
+                                     <button className="btn btn-primary rounded-pill mt-3 mb-3">Delete</button>
+                                   </td>
                                </tr>
                            })}
                        </tbody>
@@ -160,7 +170,6 @@ export function Rooms() {
         </div>
     )
 }
-
 
 
 export function Users(){
@@ -192,6 +201,7 @@ export function Users(){
                <th>Name</th>
                <th>Email</th>
                <th>isAdmin</th>
+               <th></th>
              </tr>
            </thead>
          
@@ -205,6 +215,10 @@ export function Users(){
               <td>{user.name}</td>
               <td>{user.email}</td>
               <td>{user.isAdmin ? 'YES' : 'NO'}</td>
+              <td>
+                <button className="btn btn-primary rounded-pill mt-3 mb-3 ">Delete</button>
+              
+              </td>
             </tr>
           }))}
            </tbody>
