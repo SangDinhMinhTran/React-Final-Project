@@ -11,10 +11,8 @@ function Navbar() {
     <div>
       <nav class="navbar navbar-expand-lg">
         <a class="navbar-brand" href="/">
-         Hotel Frenzy
+         Hotel <span class="badge badge-secondary" style={{textAlign:'center' }}>Frenzy</span>
         </a>
-        <a class="nav-link" href="/">Home</a>
-        <a class="nav-link" href="/home">Book</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -51,14 +49,25 @@ function Navbar() {
             <>
             <li class="nav-item active">
               <a class="nav-link" href="/register">
-                Register
+                Register⌨️
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/login">
-                Login
+                Login🔓
               </a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/admin">
+              <button type="button" class="btn-secondary">Admin🔑</button>
+                </a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/home">
+              <button type="button" class="btn-secondary">Book Now📍</button>
+              </a>
+            </li>
+
             </>
             )}
 
