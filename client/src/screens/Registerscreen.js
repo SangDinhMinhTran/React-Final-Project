@@ -3,7 +3,8 @@ import {useDispatch , useSelector} from 'react-redux'
 import axios from "axios";
 import Error from "../components/Error";
 import Loader from "../components/Loader";
-import Success from '../components/Success'
+import Success from '../components/Success';
+import { toast } from "react-toastify";
 export default function Registerscreen() {
   const [name, setname] = useState("");
   const [email, setemail] = useState("");
@@ -34,10 +35,13 @@ export default function Registerscreen() {
             setname('')
             setcpassword('')
             setpassword('')
+          
+            window.location.href='/login';
           } catch (error) {
             seterror(true)
             setloading(false)
             console.log(error);
+            toast.error("Opps! Something goes wrong");
           }
       
       }
@@ -47,7 +51,7 @@ export default function Registerscreen() {
   return (
     <div className='register'>
       <div className="row justify-content-center mt-5">
-        <div className="col-md-5 mt-5 text-left shadow-lg p-3 mb-5 bg-white rounded">
+        <div className="col-md-5 mt-5 text-left shadow-lg p-3 mb-5 bg-white rounded" data-aos='zoom-out'>
 
           {loading && (<Loader/>)}
           {success && (<Success success='User Registered Successfully' />)}
