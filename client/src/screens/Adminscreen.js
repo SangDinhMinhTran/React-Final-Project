@@ -14,28 +14,31 @@ const user = JSON.parse(localStorage.getItem("currentUser"));
 function Adminscreen() {
   return (
     <div className="ml-3">
-        <h2 className="text-center m-2" style={{ fontSize: "35px" }}>Admin Panel</h2>
+        <h2 className=" mt-5 text-middle shadow-lg p-3 mb-5 bg-silver rounded" data-aos='zoom-out'> Admin <span class="badge badge-secondary" style={{textAlign:'center' }}>Panel</span></h2>
+      <div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
       <Tabs defaultActiveKey="1">
-        <TabPane tab="Bookings" key="1">
-          <div className="row">
+        <TabPane tab="Bookings" style={{ textAlign: 'center' }} key="1">
+          <div className=" mt-5 text-middle shadow-lg p-3 mb-5 bg-silver rounded">
             <Bookings/>
           </div>
         </TabPane>
-        <TabPane tab="Rooms" key="2">
+        <TabPane tab="Rooms" style={{ textAlign: 'center' }} key="2">
         
-            <div className="row">
+            <div className=" mt-5 text-middle shadow-lg p-3 mb-5 bg-silver rounded" >
                <Rooms/>
             </div>
          
         </TabPane>
-        <TabPane tab="Add Room" key="3">
+        <TabPane tab="Add Room" style={{ textAlign: 'center' }} key="3">
          
             
                  <Addroom/>
         
           
         </TabPane>
-        <TabPane tab="Users" key="4">
+        <TabPane tab="Users" style={{ textAlign: 'center' }} key="4">
       
             <Users/>
       
@@ -238,13 +241,13 @@ export function Addroom() {
       }
   }
   return (
-    <div className="row">
+    <div className="col-md-10 mt-10 shadow-lg p-3 mb-5 bg-white rounded">
      
         <div className="col-md-5">
           <input
             type="text"
             className="form-control mt-1"
-            placeholder="name"
+            placeholder="Name"
             value={room}
             onChange={(e) => {
               setroom(e.target.value);
@@ -254,7 +257,7 @@ export function Addroom() {
           <input
             type="text"
             className="form-control mt-1"
-            placeholder="rentperday"
+            placeholder="Rent Price Each Day"
             value={rentperday}
             onChange={(e) => {
               setrentperday(e.target.value);
@@ -264,7 +267,7 @@ export function Addroom() {
           <input
             type="text"
             className="form-control mt-1"
-            placeholder="maxcount"
+            placeholder="Max Count"
             value={maxcount}
             onChange={(e) => {
               setmaxcount(e.target.value);
@@ -274,7 +277,7 @@ export function Addroom() {
           <input
             type="text"
             className="form-control mt-1"
-            placeholder="description"
+            placeholder="Description"
             value={description}
             onChange={(e) => {
               setdescription(e.target.value);
@@ -284,7 +287,7 @@ export function Addroom() {
           <input
             type="text"
             className="form-control mt-1"
-            placeholder="phonenumber"
+            placeholder="Phone Number"
             value={phonenumber}
             onChange={(e) => {
               setphonenumber(e.target.value);
@@ -297,7 +300,7 @@ export function Addroom() {
         <input
             type="text"
             className="form-control mt-1"
-            placeholder="type"
+            placeholder="Type"
             value={type}
             onChange={(e) => {
               settype(e.target.value);
@@ -306,7 +309,7 @@ export function Addroom() {
           <input
             type="text"
             className="form-control mt-1"
-            placeholder="amenities"
+            placeholder="Amenities"
             value={amenities}
             onChange={(e) => {
               setamenities(e.target.value);
@@ -315,16 +318,27 @@ export function Addroom() {
            <input
             type="text"
             className="form-control mt-1"
-            placeholder="surcharge"
+            placeholder="Surcharge"
             value={surcharge}
             onChange={(e) => {
               setsurcharge(e.target.value);
             }}
           />
-        <input
+          </div>
+
+<div className="col-md-6">
+<input
+    type="text"
+    className="form-control mt-1"
+    placeholder="type"
+    value={type}
+    onChange={(e) => {
+      settype(e.target.value);
+    }}
+        input
             type="text"
             className="form-control mt-1"
-            placeholder="Image url 1"
+            placeholder="Image URL 1"
             value={image1}
             onChange={(e) => {
               setimage1(e.target.value);
@@ -333,7 +347,7 @@ export function Addroom() {
           <input
             type="text"
             className="form-control mt-1"
-            placeholder="Image url 2"
+            placeholder="Image URL 2"
             value={image2}
             onChange={(e) => {
               setimage2(e.target.value);
@@ -342,7 +356,7 @@ export function Addroom() {
           <input
             type="text"
             className="form-control mt-1"
-            placeholder="Image url 3"
+            placeholder="Image URL 3"
             value={image3}
             onChange={(e) => {
               setimage3(e.target.value);
